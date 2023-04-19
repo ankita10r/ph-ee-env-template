@@ -232,6 +232,18 @@ channel:
     stub_backend: {}
   deployment:
     annotations: {}
+  extraEnvVars:
+    - bpmns:
+      tenants:
+        - id: "OpensPp"
+          flows:
+            payment-transfer: "MockFundTransfer-{dfspid}}"
+        - id: "OpenG2P"
+          flows:
+            payment -transfer: "PayerMockedFundTransfer-{dfspid}"
+        - id: "GovStack"
+          flows:
+            payment-transfer: "PayerFundTransfer-{dfspid}"
 
 operations:
   enabled: true

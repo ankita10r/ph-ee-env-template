@@ -80,6 +80,9 @@ spec:
               value: "{{ .Values.channel.tenantSecondary.clientSecret }}"
             - name: "CHANNEL_TENANTSECONDARY_TENANT"
               value: "{{ .Values.channel.tenantSecondary.tenant }}"
+              { { - if .Values.channel.extraEnvVars } }
+              { { toYaml ( .Values.channel.extraEnvVars ) | indent 12 } }
+              { { - end } }
           volumeMounts:
             - name: ph-ee-config
               mountPath: "/config"
