@@ -702,6 +702,26 @@ importer_rdbms:
     annotations: {}
   javaToolOptions: "-Xmx256M"
 
+mockpayment:
+  enabled: true
+  replicas: 1
+  image: ""
+  imageTag: "v1.0.0"
+  imagePullPolicy: "Always"
+  SPRING_PROFILES_ACTIVE: ""
+  LOGGING_LEVEL_ROOT: "INFO"
+  DFSPIDS: ""
+  mockFailure:
+    percentage: 15
+  limits:
+    memory: "512M"
+    cpu: "500m"
+  requests:
+    memory: "512M"
+    cpu: "100m"
+  deployment:
+    annotations: { }
+
 connector_bulk:
   enabled: false
   replicas: 1
