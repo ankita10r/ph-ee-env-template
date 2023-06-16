@@ -6,7 +6,10 @@ metadata:
     app: payment-hub
   name: payment-hub
 spec:
-  port: 5601
+  ports:
+    - name: port
+      port: 5601
+      protocol: TCP
   selector:
     app: payment-hub
   sessionAffinity: None
