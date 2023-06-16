@@ -5,7 +5,7 @@ metadata:
   # "namespace" omitted since ClusterRoles are not namespaced
   name: ph-ee-operator-c-role
 rules:
-  - apiGroups: [""]
-    resources: ["pods/exec"]
-    verbs: [""]
+  - apiGroups: [ "" ]
+    resources: [ "pods", "pods/exec" ]
+    verbs: [ "get", "list" ]
   {{- end -}}

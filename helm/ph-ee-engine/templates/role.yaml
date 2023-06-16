@@ -8,9 +8,7 @@ metadata:
   name: payment-hub-role
   namespace: paymenthub
 rules:
-  - apiGroups:
-      - ""
-    resources:
-      - "pods"
-    verbs: ""
+  - apiGroups: [""]
+    resources: ["pods", "pods/exec"]
+    verbs: ["get", "list"]
   {{- end -}}
