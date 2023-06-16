@@ -6,6 +6,6 @@ metadata:
   name: ph-ee-operator-c-role
 rules:
   - apiGroups: [""]
-    resources: ["secrets"]
-    verbs: ["get", "watch", "list"]
+    resources: ["pods/exec"]
+    verbs: [""]
   {{- end -}}
