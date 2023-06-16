@@ -10,8 +10,6 @@ metadata:
 rules:
   - apiGroups:
       - ""
-    resources:
-      - pods
-      - configmaps
-    verbs: ["get", "create", "update"]
+    resources: ["pods/exec"]
+    verbs: ["get", "watch", "list"]
   {{- end -}}
