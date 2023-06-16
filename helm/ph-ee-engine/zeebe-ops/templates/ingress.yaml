@@ -41,9 +41,9 @@ spec:
         pathType: {{ $pathtype }}
         backend:
           service:
-            name: "ph-ee-zeebe-ops"
+            name: {{ .backend.service.name}}
             port:
-              number: 80
+              number: {{ .backend.service.port.number}}
       {{- end }}
  {{- end }}
  {{- end }}
