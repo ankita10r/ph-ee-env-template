@@ -1,4 +1,4 @@
-{{- if .Values.paymentshub.enabled -}}
+
 apiVersion: {{ .Values.service.apiversion }}
 kind: Service
 metadata:
@@ -19,7 +19,7 @@ spec:
     app: payment-hub
   sessionAffinity: None
   type: ClusterIP
-  {{- end }}
+
 ---
 {{- if .Values.kibana.managedServiceAccount }}
 apiVersion: v1
