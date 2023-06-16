@@ -1,0 +1,38 @@
+{{- if .Values.paymenthub.enabled -}}
+apiVersion: {{ .Values.service.apiversion }}
+kind: Service
+metadata:
+  labels:
+    app: payment-hub
+  name: payment-hub
+spec:
+  ports:
+    - name: port
+      port: 80
+      protocol: TCP
+      targetPort: 5000
+    - name: http
+      port: 82
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: payment-hub
+  sessionAffinity: None
+  type: ClusterIP
+  {{- end }}
+---
+{{- if .Values.kibana.managedServiceAccount }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "payment-hub"
+  annotations:
+    {{- with .Values.serviceAccountAnnotations }}
+      {{- toYaml . | nindent 4 }}
+      {{- end }}
+  labels:
+    app: "payment-hub"
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+  {{- end -}}
