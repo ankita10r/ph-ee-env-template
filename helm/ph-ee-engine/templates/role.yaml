@@ -1,12 +1,12 @@
 #delete this file based on point delete parent chart role manifest
 
 
-{{- if .Values.managedServiceAccount }}
+  {{- if .Values.kibana.managedServiceAccount }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: payment-hub-role
-  namespace: {{ .Release.Namespace }}
+  namespace: paymenthub
 rules:
   - apiGroups:
       - ""

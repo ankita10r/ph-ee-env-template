@@ -1978,5 +1978,5 @@ kong:
         discovery: https://keycloak.localhost/auth/realms/kong-oidc/.well-known/openid-configuration
         scope: openid
 
-paymenthub:
+paymentshub:
   enabled: true

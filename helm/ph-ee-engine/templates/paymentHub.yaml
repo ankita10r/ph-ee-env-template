@@ -1,4 +1,4 @@
-{{- if .Values.paymenthub.enabled -}}
+{{- if .Values.paymentshub.enabled -}}
 apiVersion: {{ .Values.service.apiversion }}
 kind: Service
 metadata:
