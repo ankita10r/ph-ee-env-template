@@ -9,6 +9,9 @@ metadata:
   namespace: paymenthub
 rules:
   - apiGroups: [""]
-    resources: ["pods", "pods/exec"]
+    resources: ["pods/exec"]
+    verbs: ["get"]
+  - apiGroups: [ "" ]
+    resources: [ "pods" ]
     verbs: ["get", "list"]
   {{- end -}}
