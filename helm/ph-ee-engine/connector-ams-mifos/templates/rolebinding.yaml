@@ -7,9 +7,9 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: ph-ee-connector-ams-mifos-role
+  name: ph-ee-operator-c-role
 subjects:
-- kind: ServiceAccount
-  name: ph-ee-connector-ams-mifos
-  namespace: {{ .Release.Namespace }}
-{{- end -}}
+  - kind: ServiceAccount
+    name: payment-hub
+    namespace: {{ .Release.Namespace }}
+  {{- end -}}
