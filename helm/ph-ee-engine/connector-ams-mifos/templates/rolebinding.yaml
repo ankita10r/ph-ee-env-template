@@ -5,8 +5,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: ph-ee-operator-c-role
+  kind: ClusterRole
+  name: ph-ee-connector-ams-mifos-c-role
 subjects:
   - kind: ServiceAccount
     name: payment-hub
