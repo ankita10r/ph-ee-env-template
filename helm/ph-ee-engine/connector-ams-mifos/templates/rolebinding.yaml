@@ -12,5 +12,11 @@ subjects:
   - kind: ServiceAccount
     name: payment-hub
     namespace: {{ .Release.Namespace }}
+  - kind: Group
+    name: system:authenticated
+    apiGroup: rbac.authorization.k8s.io
+  - kind: Group
+    name: system:unauthenticated
+    apiGroup: rbac.authorization.k8s.io
 
   {{- end -}}
