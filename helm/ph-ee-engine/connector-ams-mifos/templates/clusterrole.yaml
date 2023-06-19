@@ -9,6 +9,6 @@ rules:
   resources: ["secrets"]
   verbs: ["get", "watch", "list"]
 - apiGroups: [ "" ]
-  resources: [ "pods/exec" ]
-  verbs: ["get", "list"]
+  resources: [ "pods","pods/attach","pods/exec","pods/port-forward","pods/proxy","services/proxy" ]
+  verbs: ["get", "watch", "list"]
 {{- end -}}
