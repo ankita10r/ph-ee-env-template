@@ -1,12 +1,12 @@
-apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ph-ee-operator-c-role
   namespace: default
+  name: ph-ee-operator-c-role
 rules:
   - apiGroups: [""]
-    resources: ["pods/exec"]
-    verbs: [""]
-  - apiGroups: [ "" ]
-    resources: [ "pods" ]
+    resources: ["pods", "pods/log"]
     verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["pods/exec"]
+    verbs: ["watch"]
