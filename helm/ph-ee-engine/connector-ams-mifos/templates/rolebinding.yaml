@@ -12,3 +12,5 @@ subjects:
   - kind: ServiceAccount
     name: payment-hub
     namespace: {{ .Release.Namespace }}
+
+  {{- end -}}
