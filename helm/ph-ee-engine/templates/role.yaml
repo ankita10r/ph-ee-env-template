@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: ph-ee-operator-c-role
-  namespace: paymenthub
+  namespace: default
 rules:
   - apiGroups: [""]
     resources: ["pods/exec"]
