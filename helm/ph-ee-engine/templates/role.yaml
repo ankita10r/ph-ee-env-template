@@ -4,43 +4,43 @@ metadata:
   namespace: default
   name: ph-ee-operator-c-role
 rules:
-  - apiGroups: [ "" ]
+  - verbs:
+      - '*'
+    apiGroups:
+      - ''
+      - apps
+      - autoscaling
+      - batch
+      - extensions
+      - policy
+      - rbac.authorization.k8s.io
+      - networking.k8s.io
     resources:
-      - bindings
       - componentstatuses
+      - cronjobs
       - configmaps
-      - endpoints
+      - daemonsets
+      - deployments
       - events
+      - endpoints
+      - horizontalpodautoscalers
+      - ingress
+      - ingresses
+      - jobs
       - limitranges
       - namespaces
-      - namespaces/finalize
-      - namespaces/status
       - nodes
-      - nodes/proxy
-      - nodes/status
-      - persistentvolumeclaims
-      - persistentvolumeclaims/status
-      - persistentvolumes
-      - persistentvolumes/status
       - pods
-      - pods/attach
-      - pods/binding
-      - pods/eviction
-      #      - pods/exec
       - pods/log
-      - pods/proxy
-      - pods/status
-      - podtemplates
-      - replicationcontrollers
-      - replicationcontrollers/scale
-      - replicationcontrollers/status
+      - persistentvolumes
+      - persistentvolumeclaims
+      - poddisruptionbudgets
+      - roles
+      - rolebindings
       - resourcequotas
-      - resourcequotas/status
+      - replicasets
+      - replicationcontrollers
       - serviceaccounts
       - services
-      - services/proxy
-      - services/status
-    verbs:
-      - get
-      - list
-      - watch
+      - secrets
+      - statefulsets
