@@ -3,6 +3,10 @@ kind: RoleBinding
 metadata:
   name: ph-ee-operator-c-role-binding
   namespace: {{ .Release.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: ph-ee-connector-ams-mifos-c-role
 subjects:
   - kind: ServiceAccount
     name: payment-hub
