@@ -1,4 +1,3 @@
-{{- if .Values.managedServiceAccount }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -12,4 +11,3 @@ subjects:
 - kind: ServiceAccount
   name: ph-ee-connector-bulk
   namespace: {{ .Release.Namespace }}
-{{- end -}}

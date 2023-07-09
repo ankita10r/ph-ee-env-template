@@ -8,7 +8,7 @@ spec:
     app: kafka
   ports:
   - protocol: TCP
-    port: 9092
+    port: 9093
     nodePort: {{ .Values.nodePort }}
   type: NodePort
 {{- end }}  
